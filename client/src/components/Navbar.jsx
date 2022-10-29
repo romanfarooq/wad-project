@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { FcDocument } from 'react-icons/fc';
-// import ProfilePicture from '../Assets/blank-profile-picture.webp';
+import ProfilePicture from '../Assets/blank-profile-picture.webp';
 import { NavItems } from './NavItems';
 
 function Navbar() {
@@ -12,6 +12,21 @@ function Navbar() {
           <h1 className="text-2xl m-auto ml-1 text-[#153a75] font-extrabold">
             TO-DO APP
           </h1>
+        </div>
+        <div className="flex h-24 justify-center items-center">
+          <img
+            className="rounded-full h-16 w-16 p-1 border-2 border-gray-100 shadow-sm"
+            src={ProfilePicture}
+            alt="profile-pic"
+          />
+          <div className="flex flex-col justify-center">
+            <span className="text-[#153a75] font-semibold">
+              Roman Farooq
+            </span>
+            <small className="text-[#153a75]">
+              TheRomanFarooq@gmail.com
+            </small>
+          </div>
         </div>
         <div className="flex flex-col gap-3">
           {NavItems.map((item, index) => (
@@ -26,7 +41,7 @@ function Navbar() {
               }
             >
               {item.icon}
-              <span className="text-lg ">{item.name}</span>
+              <span className="text-lg">{item.name}</span>
             </NavLink>
           ))}
         </div>
