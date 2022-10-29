@@ -7,12 +7,12 @@ export const NavItems = [
   {
     name: 'Home',
     path: '/',
-    icon: <AiFillHome className="text-2xl text-[#2196F3]" />,
+    icon: <AiFillHome className="text-2xl text-primary-1000" />,
   },
   {
     name: 'Email Me',
     path: '/email',
-    icon: <MdEmail className="text-2xl text-[#2196F3]" />,
+    icon: <MdEmail className="text-2xl text-primary-1000" />,
   },
   {
     name: 'About',
@@ -22,11 +22,11 @@ export const NavItems = [
   {
     name: 'Settings',
     path: '/settings',
-    icon: <AiFillSetting className="text-2xl text-[#2196F3]" />,
+    icon: <AiFillSetting className="text-2xl text-primary-1000" />,
   },
   {
     name: 'Logout',
     path: '/login',
-    icon: <RiLogoutBoxRFill className="text-2xl text-[#2196F3]" />,
+    icon: <RiLogoutBoxRFill className="text-2xl text-primary-1000" />,
   }
 ];

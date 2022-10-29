@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Home({ isAuth }) {
+function SignUp({ isAuth }) {
   const navigate = useNavigate();
   useEffect(() => {
-    if (!isAuth) {
-      navigate('/login');
+    if (isAuth) {
+      navigate('/');
     }
   }, [isAuth, navigate]);
   return (
@@ -15,4 +15,4 @@ function Home({ isAuth }) {
   );
 }
 
-export default Home;
+export default SignUp;
