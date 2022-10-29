@@ -1,12 +1,13 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { FcDocument } from 'react-icons/fc';
-import ProfilePicture from '../Assets/blank-profile-picture.webp';
+import { MdDarkMode } from 'react-icons/md';
 import { NavItems } from './NavItems';
+import ProfilePicture from '../Assets/blank-profile-picture.webp';
 
 function Navbar() {
   return (
     <>
-      <nav className="fixed top-0 bottom-0 left-0 w-1/5 bg-[#f5f6fc] rounded-3xl shadow-inner">
+      <nav className="fixed top-0 bottom-0 left-0 w-1/5 bg-[#f5f6fc] rounded-r-3xl shadow-inner">
         <div className="flex m-5 pb-3 border-b-2 border-blue-100">
           <FcDocument className="text-5xl" />
           <h1 className="text-2xl m-auto ml-1 text-[#153a75] font-extrabold">
@@ -19,13 +20,9 @@ function Navbar() {
             src={ProfilePicture}
             alt="profile-pic"
           />
-          <div className="flex flex-col justify-center">
-            <span className="text-[#153a75] font-semibold">
-              Roman Farooq
-            </span>
-            <small className="text-[#153a75]">
-              TheRomanFarooq@gmail.com
-            </small>
+          <div className="flex flex-col justify-center text-[#153a75]">
+            <span className="font-semibold">Roman Farooq</span>
+            <small>TheRomanFarooq@gmail.com</small>
           </div>
         </div>
         <div className="flex flex-col gap-3">
@@ -44,6 +41,26 @@ function Navbar() {
               <span className="text-lg">{item.name}</span>
             </NavLink>
           ))}
+        </div>
+        <div className="fixed bottom-0 left-0">
+          <div className="flex gap-2 px-5 py-4">
+            <MdDarkMode className="text-2xl mt-1 text-[#2196F3]" />
+            <span className="text-xl font-medium text-[#153a75]">
+              Dark Mode
+            </span>
+            <label
+              htmlFor="checkbox"
+              className="relative inline-block w-10 h-5 ml-1 mt-[5px]"
+            >
+              <input
+                type="checkbox"
+                id="checkbox"
+                className="opacity-0 w-0 h-0"
+                onClick={() => console.log('clicked')}
+              />
+              <span className="slider round"></span>
+            </label>
+          </div>
         </div>
       </nav>
       <Outlet />
