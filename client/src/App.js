@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProtectedRoutes from './ProtectedRoutes';
-import Navbar from './components/Navbar';
+import Layout from './components/Layout';
 import Home from './components/Home';
 import Email from './components/Email';
 import About from './components/About';
@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<ProtectedRoutes />}>
-          <Route path="/" element={<Navbar />}>
+          <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/email" element={<Email />} />
             <Route path="/about" element={<About />} />
