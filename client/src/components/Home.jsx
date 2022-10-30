@@ -1,13 +1,6 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
-function Home({ isAuth }) {
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (!isAuth) {
-      navigate('/login');
-    }
-  }, [isAuth, navigate]);
+function Home() {
   return (
     <>
       <div></div>

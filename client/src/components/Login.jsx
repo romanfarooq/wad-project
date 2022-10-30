@@ -1,14 +1,7 @@
-import { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FcDocument } from 'react-icons/fc';
 
-function Login({ isAuth, isDark }) {
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (isAuth) {
-      navigate('/');
-    }
-  }, [isAuth, navigate]);
+function Login({ isDark }) {
   return (
     <div className={isDark ? 'dark' : ''}>
       <section className="bg-gray-50 dark:bg-gray-900">

@@ -1,13 +1,6 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
-function SignUp({ isAuth }) {
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (isAuth) {
-      navigate('/');
-    }
-  }, [isAuth, navigate]);
+function SignUp() {
   return (
     <>
       <div></div>
