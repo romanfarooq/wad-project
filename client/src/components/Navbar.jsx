@@ -2,11 +2,15 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { FcDocument } from 'react-icons/fc';
 import { MdDarkMode } from 'react-icons/md';
 import { NavItems } from './NavItems';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleDarkMode } from '../redux/slices/darkModeSlice';
 import ProfilePicture from '../Assets/blank-profile-picture.webp';
 
-function Navbar({ isDark, setIsDark }) {
+function Navbar() {
+  const dispatch = useDispatch();
+  const { darkMode } = useSelector((state) => state.darkMode);
   return (
-    <>
+    <div className={darkMode ? 'dark' : ''}>
       <nav className="fixed top-0 bottom-0 left-0 w-1/5 bg-primary-10 rounded-r-3xl shadow-inner">
         <div className="flex m-5 pb-3 border-b-2 border-blue-100">
           <FcDocument className="text-5xl m-auto sm:m-0 md:text-4xl lg:text-5xl" />
@@ -48,7 +52,7 @@ function Navbar({ isDark, setIsDark }) {
           <div className="flex flex-col w-full l-md:flex-row gap-2 px-3 lg:px-5 py-4">
             <MdDarkMode
               className="text-2xl m-auto sm:m-0 sm:mt-1 cursor-pointer sm:cursor-default text-primary-1000"
-              onClick={() => setIsDark(!isDark)}
+              onClick={() => dispatch(toggleDarkMode())}
             />
             <div className="hidden sm:flex">
               <span className="block my-auto text-xs md:text-sm lg:text-base xl:text-xl font-medium text-primary-1100">
@@ -62,7 +66,7 @@ function Navbar({ isDark, setIsDark }) {
                   type="checkbox"
                   id="checkbox"
                   className="opacity-0 w-0 h-0"
-                  onClick={() => setIsDark(!isDark)}
+                  onClick={() => dispatch(toggleDarkMode())}
                 />
                 <span className="slider round"></span>
               </label>
@@ -71,7 +75,7 @@ function Navbar({ isDark, setIsDark }) {
         </div>
       </nav>
       <Outlet />
-    </>
+    </div>
   );
 }
 
