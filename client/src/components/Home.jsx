@@ -1,24 +1,31 @@
 import { GiAlarmClock } from 'react-icons/gi';
 import { VscEdit } from 'react-icons/vsc';
 import { MdDeleteForever } from 'react-icons/md';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeTodo } from '../redux/slices/todosSlice';
 
 function Home() {
+  const dispatch = useDispatch();
+  const { todos } = useSelector((state) => state.todos);
   return (
-    <div className="dark:bg-gray-900">
-      <div className="w-4/5 ml-auto container py-20 px-6">
+    <div className="w-full dark:bg-gray-900">
+      <div className="w-4/5 ml-auto py-10 px-6">
+        <h1 className="text-center pb-12">
+          <span className="text-4xl dark:text-white font-bold">Todo</span>
+          <span className="text-4xl text-blue-500 font-bold">List</span>
+        </h1>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {[...Array(10)].map((_, i) => (
+          {todos.map((todo) => (
             <div
-              key={i}
-              className="w-full flex flex-col justify-between items-start dark:bg-gray-800 bg-white dark:border-gray-700 rounded-lg border border-gray-400 mb-6 py-5 px-4"
+              key={todo.id}
+              className="w-full flex flex-col justify-between items-start dark:bg-gray-800 bg-gray-100 dark:border-gray-700 rounded-lg shadow mb-6 py-5 px-4"
             >
               <div>
                 <h4 className="text-gray-800 dark:text-gray-100 font-bold mb-3">
-                  13 things to work on
+                  {todo.title}
                 </h4>
                 <p className="text-gray-800 mb-1 dark:text-gray-100 text-sm">
-                  Probabo, inquit, sic agam, ut labore et voluptatem sequi
-                  nesciunt, neque porro quisquam est, quid malum, sensu iudicari
+                  {todo.description}
                 </p>
               </div>
               <div className="w-full flex flex-col items-start">
@@ -29,10 +36,10 @@ function Home() {
                 <div className="flex items-center justify-between text-gray-800 dark:text-gray-100 w-full">
                   <p className="text-sm">March 28, 2020</p>
                   <div className="flex">
-                    <div className="w-8 h-8 rounded-full bg-red-800 dark:text-red-800 dark:bg-gray-100 text-white flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-full cursor-pointer bg-red-500 hover:bg-red-600 text-white flex items-center justify-center" onClick={() => dispatch(removeTodo(todo.id))}>
                       <MdDeleteForever className="text-lg" />
                     </div>
-                    <div className="w-8 h-8 ml-2 rounded-full bg-gray-800 dark:text-gray-800 dark:bg-gray-100 text-white flex items-center justify-center">
+                    <div className="w-8 h-8 ml-2 rounded-full cursor-pointer bg-green-500 hover:bg-green-600 text-white flex items-center justify-center">
                       <VscEdit />
                     </div>
                   </div>

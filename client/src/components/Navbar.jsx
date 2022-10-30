@@ -48,10 +48,12 @@ function Navbar() {
       </div>
       <div className="fixed bottom-0 left-0 w-1/5">
         <div className="flex flex-col w-full l-md:flex-row gap-2 px-3 lg:px-5 py-4">
-          <MdDarkMode
-            className="text-2xl m-auto sm:m-0 sm:mt-1 cursor-pointer sm:cursor-default text-primary-1000"
-            onClick={() => dispatch(toggleDarkMode())}
-          />
+          <div className='cursor-pointer m-auto sm:m-0 sm:cursor-default p-2 sm:p-0 rounded-full sm:rounded-none hover:bg-[#ebecf5] sm:hover:bg-inherit'>
+            <MdDarkMode
+              className="text-2xl sm:mt-[3px] text-primary-1000"
+              onClick={() => dispatch(toggleDarkMode())}
+            />
+          </div>
           <div className="hidden sm:flex">
             <span className="block my-auto text-xs md:text-sm lg:text-base xl:text-xl font-medium text-primary-1100">
               Dark Mode
