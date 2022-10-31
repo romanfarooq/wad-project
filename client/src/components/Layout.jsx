@@ -7,7 +7,11 @@ function Layout() {
   return (
     <div className={darkMode ? 'dark' : ''}>
       <Navbar />
-      <Outlet />
+      <div className="w-full min-h-screen dark:bg-gray-900">
+        <div className="w-4/5 ml-auto py-10 px-6">
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 }
