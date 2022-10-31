@@ -2,12 +2,13 @@ import { NavLink } from 'react-router-dom';
 import { FcDocument } from 'react-icons/fc';
 import { MdDarkMode } from 'react-icons/md';
 import { NavItems } from './NavItems';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleDarkMode } from '../redux/slices/darkModeSlice';
 import ProfilePicture from '../Assets/blank-profile-picture.webp';
 
 function Navbar() {
   const dispatch = useDispatch();
+  const { darkMode } = useSelector((state) => state.darkMode);
   return (
     <nav className="fixed top-0 bottom-0 left-0 w-1/5 bg-primary-10 rounded-r-3xl shadow-inner">
       <div className="flex m-5 pb-3 border-b-2 border-blue-100">
@@ -48,7 +49,7 @@ function Navbar() {
       </div>
       <div className="fixed bottom-0 left-0 w-1/5">
         <div className="flex flex-col w-full l-md:flex-row gap-2 px-3 lg:px-5 py-4">
-          <div className='cursor-pointer m-auto sm:m-0 sm:cursor-default p-2 sm:p-0 rounded-full sm:rounded-none hover:bg-[#ebecf5] sm:hover:bg-inherit'>
+          <div className="cursor-pointer m-auto sm:m-0 sm:cursor-default p-2 sm:p-0 rounded-full sm:rounded-none hover:bg-[#ebecf5] sm:hover:bg-inherit">
             <MdDarkMode
               className="text-2xl sm:mt-[3px] text-primary-1000"
               onClick={() => dispatch(toggleDarkMode())}
@@ -59,16 +60,18 @@ function Navbar() {
               Dark Mode
             </span>
             <label
-              htmlFor="checkbox"
-              className="relative sm:inline-block w-10 h-5 ml-2 mt-[5px]"
+              for="default-toggle"
+              class="relative sm:inline-block ml-2 mt-[3px] cursor-pointer"
             >
               <input
                 type="checkbox"
-                id="checkbox"
-                className="opacity-0 w-0 h-0"
+                value=""
+                id="default-toggle"
+                class="sr-only peer"
+                checked={darkMode}
                 onClick={() => dispatch(toggleDarkMode())}
               />
-              <span className="slider round"></span>
+              <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
             </label>
           </div>
         </div>
