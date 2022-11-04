@@ -69,9 +69,19 @@ const todosSlice = createSlice({
         return todo;
       });
     },
+    updateTodo: (state, action) => {
+      state.todos = state.todos.map((todo) => {
+        if (todo.id === action.payload.id) {
+          todo.title = action.payload.title;
+          todo.description = action.payload.description;
+          todo.completed = action.payload.completed;
+        }
+        return todo;
+      });
+    },
   },
 });
 
-export const { addTodo, removeTodo, toggleTodo } = todosSlice.actions;
+export const { addTodo, removeTodo, toggleTodo, updateTodo } = todosSlice.actions;
 
 export default todosSlice.reducer;
