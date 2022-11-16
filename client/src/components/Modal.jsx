@@ -18,11 +18,11 @@ const Modal = (props) => {
     <div
       id="popup-modal"
       tabIndex="-1"
-      className="overflow-y-auto overflow-x-hidden fixed inset-0 flex min-h-screen min-w-full justify-center items-center"
+      className="overflow-y-auto overflow-x-hidden fixed inset-0 flex justify-center items-center"
       aria-hidden="true"
     >
-      <div className="relative p-4 max-w-md">
-        <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <div className="p-4">
+        <div className="bg-white rounded-lg shadow dark:bg-gray-700">
           <button
             type="button"
             className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
@@ -35,7 +35,7 @@ const Modal = (props) => {
           <div className="p-6 text-center">
             <FiAlertCircle className="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" />
             <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-              Are you sure you want to delete this product?
+              Are you sure you want to delete this Note?
             </h3>
             <button
               data-modal-toggle="popup-modal"
