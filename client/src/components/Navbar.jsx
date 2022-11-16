@@ -1,10 +1,10 @@
-import { NavLink } from 'react-router-dom';
-import { FcDocument } from 'react-icons/fc';
-import { MdDarkMode } from 'react-icons/md';
-import { NavItems } from './NavItems';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleDarkMode } from '../redux/slices/darkModeSlice';
-import ProfilePicture from '../Assets/blank-profile-picture.webp';
+import { NavLink } from "react-router-dom";
+import { FcDocument } from "react-icons/fc";
+import { MdDarkMode } from "react-icons/md";
+import { NavItems } from "./NavItems";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleDarkMode } from "../redux/slices/darkModeSlice";
+import ProfilePicture from "../Assets/blank-profile-picture.webp";
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -25,7 +25,9 @@ function Navbar() {
         />
         <div className="hidden sm:flex text-center xl:text-left flex-col justify-center text-primary-1100">
           <span className="font-semibold">Roman Farooq</span>
-          <small className="text-xs">TheRomanFarooq@gmail.com</small>
+          <small className="hidden l-md:block text-xs">
+            TheRomanFarooq@gmail.com
+          </small>
         </div>
       </div>
       <div className="flex flex-col gap-3">
@@ -36,8 +38,8 @@ function Navbar() {
             end
             className={({ isActive }) =>
               isActive
-                ? 'flex items-center gap-2 px-2 justify-center sm:justify-start md:px-5 py-2 rounded-r-md bg-[#ebecf5] border-r-8 border-[#234d92] text-primary-1100 font-bold'
-                : 'flex items-center gap-2 px-2 justify-center sm:justify-start md:px-5 py-2 rounded-r-md hover:bg-[#ebecf5] hover:border-r-8 transition duration-200 border-[#234d92] text-primary-1100 font-medium hover:font-bold'
+                ? "flex items-center gap-2 px-2 justify-center sm:justify-start md:px-5 py-2 rounded-r-md bg-[#ebecf5] border-r-8 border-[#234d92] text-primary-1100 font-bold"
+                : "flex items-center gap-2 px-2 justify-center sm:justify-start md:px-5 py-2 rounded-r-md hover:bg-[#ebecf5] hover:border-r-8 transition duration-200 border-[#234d92] text-primary-1100 font-medium hover:font-bold"
             }
           >
             {item.icon}

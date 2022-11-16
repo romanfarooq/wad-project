@@ -1,6 +1,5 @@
-import { Outlet } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { Outlet, Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function ProtectedRoutes() {
   const { isAuth } = useSelector((state) => state.auth);

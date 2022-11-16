@@ -1,55 +1,63 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState: {
     todos: [
       {
         id: 1,
-        title: '13 things to work on',
-        description: 'Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari',
+        title: "13 things to work on",
+        description:
+          "Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari",
         completed: false,
       },
       {
         id: 2,
-        title: '13 things to work on',
-        description: 'Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari',
+        title: "13 things to work on",
+        description:
+          "Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari",
         completed: false,
       },
       {
         id: 3,
-        title: '13 things to work on',
-        description: 'Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari',
+        title: "13 things to work on",
+        description:
+          "Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari",
         completed: false,
       },
       {
         id: 4,
-        title: '13 things to work on',
-        description: 'Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari',
+        title: "13 things to work on",
+        description:
+          "Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari",
         completed: false,
       },
       {
         id: 5,
-        title: '13 things to work on',
-        description: 'Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari',
+        title: "13 things to work on",
+        description:
+          "Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari",
         completed: false,
       },
       {
         id: 6,
-        title: '13 things to work on',
-        description: 'Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari',
+        title: "13 things to work on",
+        description:
+          "Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari",
         completed: false,
       },
       {
         id: 7,
-        title: '13 things to work on',
-        description: 'Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari',
+        title: "13 things to work on",
+        description:
+          "Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari",
         completed: false,
       },
       {
         id: 8,
-        title: '13 things to work on',
-        description: 'Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari',
+        title: "13 things to work on",
+        description:
+          "Probabo, inquit, sic agam, ut labore et voluptatem sequi nesciunt, neque porro quisquam est, quid malum, sensu iudicari",
         completed: false,
       },
     ],
@@ -82,6 +90,7 @@ const todosSlice = createSlice({
   },
 });
 
-export const { addTodo, removeTodo, toggleTodo, updateTodo } = todosSlice.actions;
+export const { addTodo, removeTodo, toggleTodo, updateTodo } =
+  todosSlice.actions;
 
 export default todosSlice.reducer;

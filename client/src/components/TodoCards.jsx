@@ -1,8 +1,8 @@
-import { GiAlarmClock } from 'react-icons/gi';
-import { VscEdit } from 'react-icons/vsc';
-import { MdDeleteForever } from 'react-icons/md';
-import { useDispatch } from 'react-redux';
-import { toggleModal } from '../redux/slices/modalSlice';
+import { GiAlarmClock } from "react-icons/gi";
+import { VscEdit } from "react-icons/vsc";
+import { MdDeleteForever } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { toggleModal } from "../redux/slices/modalSlice";
 
 const TodoCards = (props) => {
   const { todo, setId } = props;

@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
-import { FcDocument } from 'react-icons/fc';
-import { useSelector } from 'react-redux';
+import { Link } from "react-router-dom";
+import { FcDocument } from "react-icons/fc";
+import { useSelector } from "react-redux";
 
 function Login() {
   const { darkMode } = useSelector((state) => state.darkMode);
   return (
-    <div className={darkMode ? 'dark' : ''}>
+    <div className={darkMode ? "dark" : ""}>
       <section className="bg-gray-50 dark:bg-gray-900">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
           <div className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
@@ -84,7 +84,7 @@ function Login() {
                   Sign in
                 </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Don’t have an account yet?{' '}
+                  Don’t have an account yet?{" "}
                   <Link
                     to="/signup"
                     className="font-medium text-primary-600 hover:underline dark:text-primary-500"

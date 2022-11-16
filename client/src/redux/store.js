@@ -1,8 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit';
-import authReducer from './slices/authSlice';
-import darkModeReducer from './slices/darkModeSlice';
-import todosReducer from './slices/todosSlice';
-import modalReducer from './slices/modalSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import authReducer from "./slices/authSlice";
+import darkModeReducer from "./slices/darkModeSlice";
+import todosReducer from "./slices/todosSlice";
+import modalReducer from "./slices/modalSlice";
 
 const store = configureStore({
   reducer: {

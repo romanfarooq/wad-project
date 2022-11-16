@@ -1,12 +1,12 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ProtectedRoutes from './components/ProtectedRoutes';
-import Layout from './components/Layout';
-import Home from './components/Home';
-import Email from './components/Email';
-import About from './components/About';
-import Settings from './components/Settings';
-import Login from './components/Login';
-import SignUp from './components/SignUp';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProtectedRoutes from "./components/ProtectedRoutes";
+import Layout from "./components/Layout";
+import Home from "./components/Home";
+import Email from "./components/Email";
+import About from "./components/About";
+import Settings from "./components/Settings";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (

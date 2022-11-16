@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import TodoCards from './TodoCards';
-import Modal from './Modal';
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import TodoCards from "./TodoCards";
+import Modal from "./Modal";
 
 function Home() {
-  const [id, setId] = useState(null);
+  const [id, setId] = useState("");
   const { todos } = useSelector((state) => state.todos);
   const { modal } = useSelector((state) => state.modal);
   return (
