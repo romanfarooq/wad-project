@@ -1,9 +1,24 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FcDocument } from "react-icons/fc";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout } from "../redux/slices/authSlice";
 
 function Login() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { darkMode } = useSelector((state) => state.darkMode);
+
+  useEffect(() => {
+    dispatch(logout());
+  }, [dispatch]);
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    dispatch(login());
+    navigate("/");
+  };
+
   return (
     <div className={darkMode ? "dark" : ""}>
       <section className="bg-gray-50 dark:bg-gray-900">
@@ -17,7 +32,7 @@ function Login() {
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Sign in to your account
               </h1>
-              <form className="space-y-4 md:space-y-6" action="#">
+              <form className="space-y-4 md:space-y-6" onSubmit={handleLogin}>
                 <div>
                   <label
                     htmlFor="email"
@@ -58,7 +73,6 @@ function Login() {
                         aria-describedby="remember"
                         type="checkbox"
                         className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                        required
                       />
                     </div>
                     <div className="ml-3 text-sm">
@@ -70,12 +84,12 @@ function Login() {
                       </label>
                     </div>
                   </div>
-                  <a
-                    href="/#"
+                  <Link
+                    href="/"
                     className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
                   >
                     Forgot password?
-                  </a>
+                  </Link>
                 </div>
                 <button
                   type="submit"
@@ -84,7 +98,7 @@ function Login() {
                   Sign in
                 </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Don’t have an account yet?{" "}
+                  Don't have an account yet?{" "}
                   <Link
                     to="/signup"
                     className="font-medium text-primary-600 hover:underline dark:text-primary-500"
