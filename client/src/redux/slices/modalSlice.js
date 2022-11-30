@@ -3,15 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 const modalSlice = createSlice({
   name: "modal",
   initialState: {
-    modal: false,
+    confirmModal: false,
+    noteModal: false,
   },
   reducers: {
-    toggleModal: (state) => {
-      state.modal = !state.modal;
+    toggleConfirmModal: (state) => {
+      state.confirmModal = !state.confirmModal;
+    },
+    toggleNoteModal: (state) => {
+      state.noteModal = !state.noteModal;
     },
   },
 });
 
-export const { toggleModal } = modalSlice.actions;
+export const { toggleConfirmModal, toggleNoteModal } = modalSlice.actions;
 
 export default modalSlice.reducer;

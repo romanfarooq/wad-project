@@ -13,7 +13,7 @@ function Navbar() {
     <nav className="fixed top-0 bottom-0 left-0 w-1/5 bg-primary-10 rounded-r-3xl shadow-inner">
       <div className="flex m-5 pb-3 border-b-2 border-blue-100">
         <FcDocument className="text-5xl m-auto sm:m-0 md:text-4xl lg:text-5xl" />
-        <h1 className="hidden sm:block sm:text-sm md:text-base lg:text-lg xl:text-2xl m-auto ml-1 text-primary-1100 font-extrabold">
+        <h1 className="hidden sm:block sm:text-sm md:text-base lg:text-lg xl:text-2xl m-auto ml-1 text-blue-900 font-extrabold">
           TO-DO APP
         </h1>
       </div>
@@ -23,7 +23,7 @@ function Navbar() {
           src={ProfilePicture}
           alt="profile-pic"
         />
-        <div className="hidden sm:flex text-center xl:text-left flex-col justify-center text-primary-1100">
+        <div className="hidden sm:flex text-center xl:text-left flex-col justify-center text-blue-900">
           <span className="font-semibold">Roman Farooq</span>
           <small className="hidden l-md:block text-xs">
             TheRomanFarooq@gmail.com
@@ -38,8 +38,8 @@ function Navbar() {
             end
             className={({ isActive }) =>
               isActive
-                ? "flex items-center gap-2 px-2 justify-center sm:justify-start md:px-5 py-2 rounded-r-md bg-[#ebecf5] border-r-8 border-[#234d92] text-primary-1100 font-bold"
-                : "flex items-center gap-2 px-2 justify-center sm:justify-start md:px-5 py-2 rounded-r-md hover:bg-[#ebecf5] hover:border-r-8 transition duration-200 border-[#234d92] text-primary-1100 font-medium hover:font-bold"
+                ? "flex items-center gap-2 px-2 justify-center sm:justify-start md:px-5 py-2 rounded-r-md bg-[#ebecf5] border-r-8 border-[#234d92] text-blue-900 font-bold"
+                : "flex items-center gap-2 px-2 justify-center sm:justify-start md:px-5 py-2 rounded-r-md hover:bg-[#ebecf5] hover:border-r-8 transition duration-200 border-[#234d92] text-blue-900 font-medium hover:font-bold"
             }
           >
             {item.icon}
@@ -58,7 +58,7 @@ function Navbar() {
             />
           </div>
           <div className="hidden sm:flex">
-            <span className="block my-auto text-xs md:text-sm lg:text-base xl:text-xl font-medium text-primary-1100">
+            <span className="block my-auto text-xs md:text-sm lg:text-base xl:text-xl font-medium text-blue-900">
               Dark Mode
             </span>
             <label
