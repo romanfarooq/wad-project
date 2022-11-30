@@ -64,7 +64,13 @@ const todosSlice = createSlice({
   },
   reducers: {
     addTodo: (state, action) => {
-      state.todos.push(action.payload);
+      const newTodo = {
+        id: state.todos.length + 1,
+        title: action.payload.title,
+        description: action.payload.description,
+        completed: false,
+      };
+      state.todos.push(newTodo);
     },
     removeTodo: (state, action) => {
       state.todos = state.todos.filter((todo) => todo.id !== action.payload);

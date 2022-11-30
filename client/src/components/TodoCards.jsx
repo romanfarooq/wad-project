@@ -1,10 +1,10 @@
 import { VscEdit } from "react-icons/vsc";
 import { MdDeleteForever } from "react-icons/md";
 import { useDispatch } from "react-redux";
-import { toggleConfirmModal, toggleNoteModal } from "../redux/slices/modalSlice";
+import { toggleConfirmModal, toggleEditNoteModal } from "../redux/slices/modalSlice";
 
 const TodoCards = (props) => {
-  const { todo, setId } = props;
+  const { todo, setId, setNote } = props;
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
@@ -12,18 +12,23 @@ const TodoCards = (props) => {
     dispatch(toggleConfirmModal());
   };
 
-  const handleEdit = (id) => {
-    setId(id);
-    dispatch(toggleNoteModal());
+  const handleEdit = (note) => {
+    setNote({
+      id: note.id,
+      title: note.title,
+      description: note.description,
+      completed: note.completed,
+    });
+    dispatch(toggleEditNoteModal());
   };
 
   return (
     <div className="w-full flex flex-col justify-between items-start dark:bg-gray-800 bg-gray-100 dark:border-gray-700 rounded-lg shadow mb-6 py-5 px-4">
       <div>
-        <h4 className="text-gray-800 dark:text-gray-100 font-bold mb-3">
+        <h4 className="text-gray-800 dark:text-gray-300 font-bold mb-3">
           {todo.title}
         </h4>
-        <p className="text-gray-800 mb-1 dark:text-gray-100 text-sm">
+        <p className="text-gray-800 mb-1 dark:text-gray-300 text-sm">
           {todo.description}
         </p>
       </div>
@@ -38,7 +43,7 @@ const TodoCards = (props) => {
           </button>
           <button
             className="w-8 h-8 ml-2 rounded-full cursor-pointer bg-blue-500 hover:bg-blue-600 text-white flex items-center justify-center"
-            onClick={() => handleEdit(todo.id)}
+            onClick={() => handleEdit(todo)}
           >
             <VscEdit />
           </button>

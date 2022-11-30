@@ -4,18 +4,22 @@ const modalSlice = createSlice({
   name: "modal",
   initialState: {
     confirmModal: false,
-    noteModal: false,
+    addNoteModal: false,
+    editNoteModal: false,
   },
   reducers: {
     toggleConfirmModal: (state) => {
       state.confirmModal = !state.confirmModal;
     },
-    toggleNoteModal: (state) => {
-      state.noteModal = !state.noteModal;
+    toggleAddNoteModal: (state) => {
+      state.addNoteModal = !state.addNoteModal;
+    },
+    toggleEditNoteModal: (state) => {
+      state.editNoteModal = !state.editNoteModal;
     },
   },
 });
 
-export const { toggleConfirmModal, toggleNoteModal } = modalSlice.actions;
+export const { toggleConfirmModal, toggleAddNoteModal, toggleEditNoteModal } = modalSlice.actions;
 
 export default modalSlice.reducer;
