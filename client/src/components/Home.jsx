@@ -4,6 +4,7 @@ import TodoCards from "./TodoCards";
 import ConfirmModal from "./ConfirmModal";
 import AddNoteModal from "./AddNoteModal";
 import EditNoteModal from "./EditNoteModal";
+import AddNoteButton from "./AddNoteButton";
 
 function Home() {
   const [id, setId] = useState("");
@@ -33,6 +34,7 @@ function Home() {
           />
         ))}
       </div>
+      <AddNoteButton />
       {confirmModal && <ConfirmModal id={id} setId={setId} />}
       {addNoteModal && <AddNoteModal />}
       {editNoteModal && <EditNoteModal note={note} setNote={setNote} />}
