@@ -11,7 +11,8 @@ const EditNoteModal = (props) => {
     setNote({ ...note, [event.target.name]: event.target.value });
   };
 
-  const handleEdit = () => {
+  const handleEdit = (event) => {
+    event.preventDefault();
     dispatch(updateTodo(note));
     dispatch(toggleEditNoteModal());
     setNote({
@@ -39,7 +40,7 @@ const EditNoteModal = (props) => {
               </span>
               <span className="text-2xl text-blue-500 font-bold"> NOTE</span>
             </h3>
-            <div className="space-y-6">
+            <form className="space-y-6" onSubmit={handleEdit}>
               <div>
                 <label
                   htmlFor="title"
@@ -76,19 +77,20 @@ const EditNoteModal = (props) => {
               </div>
               <div className="flex justify-between">
                 <button
+                  type="button"
                   className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
                   onClick={() => dispatch(toggleEditNoteModal())}
                 >
                   Cancel
                 </button>
                 <button
+                  type="submit"
                   className="text-white bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center"
-                  onClick={handleEdit}
                 >
                   Edit Note
                 </button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
